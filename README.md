@@ -7,8 +7,9 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
 
 ## TOC
 
-- [ ] I. Fundamental
-    - 1 What is JavaScript?
+- [ ] I. [Fundamental](my_solutions/fundamental)
+    - 1 [What is JavaScript?](my_solutions/fundamental/what_is_js)
+        - [Print Cat Faces](my_solutions/fundamental/what_is_js/print_cat_face.js)
     - 2 Data Types and Variables
     - 3 Arrays
     - 4 Objects
