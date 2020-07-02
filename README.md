@@ -24,7 +24,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
 - [ ] III. Canvas
     - 13 The Canvas Element
     - 14 Making Things Move on the Canvas
-    - 15 Controling Animations with the Keyboard
+    - 15 Controlling Animations with the Keyboard
     - 16 Making a Snake Game: Part 1
     - 17 Making a Snake Game: Part 2
 
