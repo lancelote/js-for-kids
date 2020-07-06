@@ -11,7 +11,8 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
     - 1 [What is JavaScript?](my_solutions/fundamental/what_is_js)
         - [Print Cat Faces](my_solutions/fundamental/what_is_js/print_cat_face.js)
     - 2 Data Types and Variables
-    - 3 Arrays
+    - 3 [Arrays](my_solutions/fundamental/arrays)
+        - [Random Insult Generator](my_solutions/fundamental/arrays/random_insult_generator.js)
     - 4 Objects
     - 5 The Basics of HTML
     - 6 Conditionals and Loops
