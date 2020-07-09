@@ -16,6 +16,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
     - 4 Objects
     - 5 The Basics of HTML
     - 6 Conditionals and Loops
+        - [Random String Generator](my_solutions/fundamental/conditionals_and_loops/random_string_generator.js)
     - 7 Creating a Hangman Game
     - 8 Functions
 - [ ] II. Advanced JavaScript
