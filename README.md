@@ -19,6 +19,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Random String Generator](my_solutions/fundamental/conditionals_and_loops/random_string_generator.js)
         - [H4CK3R SP34K](my_solutions/fundamental/conditionals_and_loops/h4ck3r_sp34k.js)
     - 7 Creating a Hangman Game
+        - [Game](my_solutions/fundamental/creating_a_hangman_game/game.js)
     - 8 Functions
 - [ ] II. Advanced JavaScript
     - 9 The DOM and jQuery
