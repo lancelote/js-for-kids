@@ -27,6 +27,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Replacing the Heading Text Using jQuery](my_solutions/advanced_javascript/the_dom_and_jquery/replace_with_jquery.html)
         - [Making a Heading Flash](my_solutions/advanced_javascript/the_dom_and_jquery/flashing_heading.html)
         - [Delay Animation](my_solutions/advanced_javascript/the_dom_and_jquery/delay_animation.html)
+        - [Using `fadeTo`](my_solutions/advanced_javascript/the_dom_and_jquery/fade_to.html)
     - 10 Interactive Programming
     - 11 Find the Buried Treasure!
     - 12 Object-Oriented Programming
