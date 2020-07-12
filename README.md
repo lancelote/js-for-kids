@@ -21,8 +21,9 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
     - 7 Creating a Hangman Game
         - [Game](my_solutions/fundamental/creating_a_hangman_game/game.js)
     - 8 Functions
-- [ ] II. Advanced JavaScript
-    - 9 The DOM and jQuery
+- [ ] II. [Advanced JavaScript](my_solutions/advanced_javascript)
+    - 9 [The DOM and jQuery](my_solutions/advanced_javascript/the_dom_and_jquery)
+        - [Replacing the Heading Text Using the DOM](my_solutions/advanced_javascript/the_dom_and_jquery/replace_heading.html)
     - 10 Interactive Programming
     - 11 Find the Buried Treasure!
     - 12 Object-Oriented Programming
