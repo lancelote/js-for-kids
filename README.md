@@ -28,7 +28,8 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Making a Heading Flash](my_solutions/advanced_javascript/the_dom_and_jquery/flashing_heading.html)
         - [Delay Animation](my_solutions/advanced_javascript/the_dom_and_jquery/delay_animation.html)
         - [Using `fadeTo`](my_solutions/advanced_javascript/the_dom_and_jquery/fade_to.html)
-    - 10 Interactive Programming
+    - 10 [Interactive Programming](my_solutions/advanced_javascript/interactive_programming)
+        - [Animate Element with `setInterval`]()
     - 11 Find the Buried Treasure!
     - 12 Object-Oriented Programming
 - [ ] III. Canvas
