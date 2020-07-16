@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square Animation</title>
+</head>
+<body>
+<h1 id="heading">Clicked: 0</h1>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    let clicked = 0;
+    let speed = 30;
+
+    let shiftX = 1;
+    let shiftY = 0;
+
+    let leftOffset = 0;
+    let topOffset = 0;
+
+    let moveHeading = function () {
+        $("#heading").offset({
+            left: leftOffset,
+            top: topOffset
+        });
+
+        leftOffset += shiftX;
+        topOffset += shiftY;
+
+        if (leftOffset === 200 && topOffset === 0) {
+            shiftX = 0;
+            shiftY = 1;
+        } else if (leftOffset === 200 && topOffset === 200) {
+            shiftX = -1;
+            shiftY = 0;
+        } else if (leftOffset === 0 && topOffset === 200) {
+            shiftX = 0;
+            shiftY = -1;
+        } else if (leftOffset === 0 && topOffset === 0) {
+            shiftX = 1;
+            shiftY = 0;
+        }
+    };
+
+    let moveInterval = setInterval(moveHeading, speed);
+
+    $("#heading").click(function () {
+        clicked += 1;
+
+        if (clicked === 10) {
+            $("#heading").text("You Win");
+            clearInterval(moveInterval);
+        } else {
+            $("#heading").text(`Clicked: ${clicked}`);
+            speed /= 2;
+            console.log(`new speed: ${speed}`);
+            clearInterval(moveInterval);
+            moveInterval = setInterval(moveHeading, speed);
+        }
+    });
+</script>
+</body>
+</html>

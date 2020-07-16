@@ -35,6 +35,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Follow the Clicks](my_solutions/advanced_javascript/interactive_programming/follow_clicks.html)
         - [Square Animation](my_solutions/advanced_javascript/interactive_programming/square_animation.html)
         - [Stop Animation with a Click](my_solutions/advanced_javascript/interactive_programming/stop_animation.html)
+        - ["Click the Header" Game](my_solutions/advanced_javascript/interactive_programming/click_game.html)
     - 11 Find the Buried Treasure!
     - 12 Object-Oriented Programming
 - [ ] III. Canvas
