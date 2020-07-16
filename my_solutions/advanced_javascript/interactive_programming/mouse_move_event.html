@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The "mousemove" event</title>
+</head>
+<body>
+<h1 id="heading">Hello world</h1>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    $("html").mousemove(function (event) {
+        $("#heading").offset({
+            left: event.pageX,
+            top: event.pageY
+        });
+    });
+</script>
+</body>
+</html>

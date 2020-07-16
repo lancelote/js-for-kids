@@ -31,6 +31,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
     - 10 [Interactive Programming](my_solutions/advanced_javascript/interactive_programming)
         - [Animate Element with `setInterval`](my_solutions/advanced_javascript/interactive_programming/animate_element.html)
         - [Responding to Clicks](my_solutions/advanced_javascript/interactive_programming/responding_to_clicks.html)
+        - [The `mousemove` Event](my_solutions/advanced_javascript/interactive_programming/mouse_move_event.html)
     - 11 Find the Buried Treasure!
     - 12 Object-Oriented Programming
 - [ ] III. Canvas
