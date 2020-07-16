@@ -34,6 +34,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [The `mousemove` Event](my_solutions/advanced_javascript/interactive_programming/mouse_move_event.html)
         - [Follow the Clicks](my_solutions/advanced_javascript/interactive_programming/follow_clicks.html)
         - [Square Animation](my_solutions/advanced_javascript/interactive_programming/square_animation.html)
+        - [Stop Animation with a Click](my_solutions/advanced_javascript/interactive_programming/stop_animation.html)
     - 11 Find the Buried Treasure!
     - 12 Object-Oriented Programming
 - [ ] III. Canvas

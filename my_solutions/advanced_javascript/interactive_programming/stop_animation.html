@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Square Animation</title>
+</head>
+<body>
+<h1 id="heading">Hello world!</h1>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    let shiftX = 1;
+    let shiftY = 0;
+
+    let leftOffset = 0;
+    let topOffset = 0;
+
+    let moveHeading = function () {
+        $("#heading").offset({
+            left: leftOffset,
+            top: topOffset
+        });
+
+        leftOffset += shiftX;
+        topOffset += shiftY;
+
+        if (leftOffset === 200 && topOffset === 0) {
+            shiftX = 0;
+            shiftY = 1;
+        } else if (leftOffset === 200 && topOffset === 200) {
+            shiftX = -1;
+            shiftY = 0;
+        } else if (leftOffset === 0 && topOffset === 200) {
+            shiftX = 0;
+            shiftY = -1;
+        } else if (leftOffset === 0 && topOffset === 0) {
+            shiftX = 1;
+            shiftY = 0;
+        }
+    };
+
+    let moveInterval = setInterval(moveHeading, 30);
+
+    $("html").click(function () {
+        clearInterval(moveInterval);
+    });
+</script>
+</body>
+</html>
