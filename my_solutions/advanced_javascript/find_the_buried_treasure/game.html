@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find the buried treasure!</title>
+</head>
+<body>
+<h1 id="heading">Find the buried treasure!</h1>
+
+<img id="map" width=400 height=400 src="map.png" alt="map">
+
+<p id="distance"></p>
+
+<p id="left"></p>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    /**
+     * Get random number from 0 to size
+     */
+    const getRandomNumber = function (size) {
+        return Math.floor(Math.random() * size);
+    };
+
+    /**
+     * Calculate distance between click event and target
+     */
+    const getDistance = function (event, target) {
+        const diffX = event.offsetX - target.x;
+        const diffY = event.offsetY - target.y;
+        return Math.sqrt((diffX * diffX) + (diffY * diffY));
+    };
+
+    /**
+     * Get a string representing the distance
+     */
+    const getDistanceHint = function (distance) {
+        if (distance < 10) {
+            return "Boiling hot!";
+        } else if (distance < 20) {
+            return "Really hot";
+        } else if (distance < 40) {
+            return "Hot";
+        } else if (distance < 80) {
+            return "Warm";
+        } else if (distance < 160) {
+            return "Cold";
+        } else if (distance < 320) {
+            return "Really cold";
+        } else {
+            return "Freezing!";
+        }
+    }
+
+    let clicks = 0;
+    let clicksLeft = 20;
+    const width = 400;
+    const height = 400;
+
+    const target = {
+        x: getRandomNumber(width),
+        y: getRandomNumber(height)
+    };
+
+    $("#map").click(function (event) {
+        clicks++;
+        clicksLeft--;
+
+        let distance = getDistance(event, target);
+        let distanceHint = getDistanceHint(distance);
+
+        $("#distance").text(distanceHint);
+        $("#left").text(`Clicks left: ${clicksLeft}`);
+
+        if (distance < 8) {
+            alert(`Found the treasure in ${clicks} clicks!`);
+        }
+
+        if (clicksLeft <= 0) {
+            $("#map").off("click");
+            alert("No more clicks - Game Over!");
+        }
+    });
+</script>
+</body>
+</html>
