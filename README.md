@@ -38,7 +38,8 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - ["Click the Header" Game](my_solutions/advanced_javascript/interactive_programming/click_game.html)
     - 11 [Find the Buried Treasure!](my_solutions/advanced_javascript/find_the_buried_treasure/)
         - [Game](my_solutions/advanced_javascript/find_the_buried_treasure/game.html)
-    - 12 Object-Oriented Programming
+    - 12 [Object-Oriented Programming](my_solutions/advanced_javascript/object_oriented_programming)
+        - [Car Constructor](my_solutions/advanced_javascript/object_oriented_programming/car.html)
 - [ ] III. Canvas
     - 13 The Canvas Element
     - 14 Making Things Move on the Canvas
