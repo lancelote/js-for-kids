@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    const Car = function (x, y) {
+        this.x = x;
+        this.y = y;
+        this.draw();
+    };
+
+    Car.prototype.draw = function () {
+        const carHtml = '<img src="car.png" alt="car">';
+        this.carElement = $(carHtml);
+        this.carElement.css({
+            position: "absolute",
+            left: this.x,
+            top: this.y
+        });
+
+        $("body").append(this.carElement);
+    };
+
+    Car.prototype.moveRight = function () {
+        this.x += 5;
+
+        this.carElement.css({
+            left: this.x,
+            top: this.y
+        });
+    };
+
+    Car.prototype.moveLeft = function () {
+        this.x -= 5;
+
+        this.carElement.css({
+            left: this.x,
+            top: this.y
+        });
+    };
+
+    Car.prototype.moveUp = function () {
+        this.y -= 5;
+
+        this.carElement.css({
+            left: this.x,
+            top: this.y
+        });
+    };
+
+    Car.prototype.moveDown = function() {
+        this.y += 5;
+
+        this.carElement.css({
+            left: this.x,
+            top: this.y
+        });
+    };
+
+    const tesla = new Car(20, 20);
+    new Car(100, 200);
+
+    $(document).on("keydown", function(event) {
+        switch(event.key) {
+            case "ArrowLeft":
+                tesla.moveLeft();
+                break;
+
+            case "ArrowUp":
+                tesla.moveUp();
+                break;
+
+            case "ArrowRight":
+                tesla.moveRight();
+                break;
+
+            case "ArrowDown":
+                tesla.moveDown();
+                break;
+
+            default: return; // exit this handler for other keys
+        }
+        event.preventDefault(); // prevent the default action (scroll / move caret)
+    });
+</script>
+</body>
+</html>
