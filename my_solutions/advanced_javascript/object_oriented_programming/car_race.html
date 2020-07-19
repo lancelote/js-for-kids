@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car</title>
+    <style>
+        #track {
+            border-right: 10px dashed darkred;
+        }
+        * {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div id="track"></div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    const carWidth = 258;
+    const trackWidth = 1000;
+    const windowWidth = trackWidth - carWidth;
+
+    let track = $("#track");
+
+    track.height($(window).height() - 10);
+    track.width(trackWidth);
+
+    const Car = function (x, y) {
+        this.x = x;
+        this.y = y;
+        this.draw();
+    };
+
+    Car.prototype.draw = function () {
+        const carHtml = '<img src="car.png" alt="car">';
+        this.carElement = $(carHtml);
+        this.carElement.css({
+            position: "absolute",
+            left: this.x,
+            top: this.y
+        });
+
+        track.append(this.carElement);
+    };
+
+    Car.prototype.moveRight = function (distance) {
+        this.x += distance;
+
+        this.carElement.css({
+            left: this.x,
+            top: this.y
+        });
+    };
+
+    const tesla = new Car(20, 20);
+    const nissan = new Car(20, 500);
+
+    let moveTesla = setInterval(function () {
+        if (tesla.x < windowWidth) {
+            console.log(`tesla.x = ${tesla.x}`);
+            let distance = Math.floor(Math.random() * 5);
+            tesla.moveRight(distance);
+        } else {
+            clearInterval(moveTesla);
+        }
+    }, 30);
+
+    let moveNissan = setInterval(function () {
+        if (nissan.x < windowWidth) {
+            console.log(`nissan.x = ${nissan.x}`);
+            let distance = Math.floor(Math.random() * 5);
+            nissan.moveRight(distance);
+        } else {
+            clearInterval(moveNissan);
+        }
+    }, 30);
+</script>
+</body>
+</html>

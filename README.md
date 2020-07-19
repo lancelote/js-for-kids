@@ -41,6 +41,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
     - 12 [Object-Oriented Programming](my_solutions/advanced_javascript/object_oriented_programming)
         - [Car Constructor](my_solutions/advanced_javascript/object_oriented_programming/car.html)
         - [Car Prototype](my_solutions/advanced_javascript/object_oriented_programming/car_prototype.html)
+        - [Car Race](my_solutions/advanced_javascript/object_oriented_programming/car_race.html)
 - [ ] III. Canvas
     - 13 The Canvas Element
     - 14 Making Things Move on the Canvas
