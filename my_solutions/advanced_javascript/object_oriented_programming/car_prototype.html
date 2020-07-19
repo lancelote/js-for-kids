@@ -12,6 +12,7 @@
     const Car = function (x, y) {
         this.x = x;
         this.y = y;
+        this.speed = 10;
         this.draw();
     };
 
@@ -28,7 +29,7 @@
     };
 
     Car.prototype.moveRight = function () {
-        this.x += 5;
+        this.x += this.speed;
 
         this.carElement.css({
             left: this.x,
@@ -37,7 +38,7 @@
     };
 
     Car.prototype.moveLeft = function () {
-        this.x -= 5;
+        this.x -= this.speed;
 
         this.carElement.css({
             left: this.x,
@@ -46,7 +47,7 @@
     };
 
     Car.prototype.moveUp = function () {
-        this.y -= 5;
+        this.y -= this.speed;
 
         this.carElement.css({
             left: this.x,
@@ -55,7 +56,7 @@
     };
 
     Car.prototype.moveDown = function() {
-        this.y += 5;
+        this.y += this.speed;
 
         this.carElement.css({
             left: this.x,
