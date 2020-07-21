@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Man</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="1000"></canvas>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.fillRect(100, 100, 50, 50);  // head
+    ctx.fillRect(120, 150, 10, 20);  // neck
+    ctx.fillRect(60, 170, 130, 10);  // hands
+    ctx.fillRect(90, 180, 70, 70);  // body
+    ctx.fillRect(90, 250, 10, 60);  // left leg
+    ctx.fillRect(150, 250, 10, 60);  // right leg
+</script>
+</body>
+</html>
