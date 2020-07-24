@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing Rectangle Outlines</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "DeepPink";
+    ctx.lineWidth = 4;
+    ctx.strokeRect(10, 10, 100, 20);
+</script>
+</body>
+</html>
