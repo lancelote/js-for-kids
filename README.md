@@ -47,6 +47,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Basic Canvas](my_solutions/canvas/the_canvas_element/basic_canvas.html)
         - [Canvas Man](my_solutions/canvas/the_canvas_element/canvas_man.html)
         - [Use Different Color](my_solutions/canvas/the_canvas_element/color.html)
+        - [Three Different Colors](my_solutions/canvas/the_canvas_element/three_colors.html)
     - 14 Making Things Move on the Canvas
     - 15 Controlling Animations with the Keyboard
     - 16 Making a Snake Game: Part 1
