@@ -50,6 +50,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Three Different Colors](my_solutions/canvas/the_canvas_element/three_colors.html)
         - [Draw Rectangle Outlines](my_solutions/canvas/the_canvas_element/drawing_rectangle_outlines.html)
         - [Drawing Lines or Paths](my_solutions/canvas/the_canvas_element/drawing_lines.html)
+        - [Draw a Stickman](my_solutions/canvas/the_canvas_element/draw_a_stickman.html)
     - 14 Making Things Move on the Canvas
     - 15 Controlling Animations with the Keyboard
     - 16 Making a Snake Game: Part 1

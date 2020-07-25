@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Draw a Stickman</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = 4;
+
+    // head
+    ctx.strokeRect(20, 20, 20, 20);
+
+    ctx.beginPath();
+
+    // body
+    ctx.moveTo(30, 40);
+    ctx.lineTo(30, 80);
+
+    // left hand
+    ctx.moveTo(30, 60);
+    ctx.lineTo(10, 50);
+
+    // right hand
+    ctx.moveTo(30, 60);
+    ctx.lineTo(50, 50);
+
+    // left leg
+    ctx.moveTo(30, 80);
+    ctx.lineTo(10, 100);
+
+    // right leg
+    ctx.moveTo(30, 80);
+    ctx.lineTo(50, 100);
+
+    ctx.stroke();
+</script>
+</body>
+</html>
