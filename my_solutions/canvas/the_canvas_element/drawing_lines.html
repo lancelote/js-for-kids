@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing Lines or Paths</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.strokeStyle = "Turquoise";
+    ctx.lineWidth = 4;
+
+    ctx.beginPath();
+
+    ctx.moveTo(10, 10);
+    ctx.lineTo(60, 60);
+
+    ctx.moveTo(60, 10);
+    ctx.lineTo(10, 60);
+
+    ctx.stroke();
+</script>
+</body>
+</html>
