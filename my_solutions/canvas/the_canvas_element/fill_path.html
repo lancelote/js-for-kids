@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fill Path</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "SkyBlue";
+    ctx.beginPath();
+    ctx.moveTo(100, 100);
+    ctx.lineTo(100, 60);
+    ctx.lineTo(130, 30);
+    ctx.lineTo(160, 60);
+    ctx.lineTo(160, 100);
+    ctx.lineTo(100, 100);
+    ctx.fill();
+</script>
+</body>
+</html>
