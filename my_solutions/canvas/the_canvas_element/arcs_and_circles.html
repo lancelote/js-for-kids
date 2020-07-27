@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arcs and Circles</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = "Green";
+
+    ctx.beginPath();
+    ctx.arc(50, 50, 20, 0, Math.PI / 2, false);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(100, 50, 20, 0, Math.PI, false);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(150, 50, 20, 0, Math.PI * 2, false);
+    ctx.stroke();
+</script>
+</body>
+</html>
