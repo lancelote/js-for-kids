@@ -54,6 +54,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Fill Path](my_solutions/canvas/the_canvas_element/fill_path.html)
         - [Drawing Arcs and Circles](my_solutions/canvas/the_canvas_element/arcs_and_circles.html)
         - [Drawing with a Function](my_solutions/canvas/the_canvas_element/drawing_function.html)
+        - [Snowman Exercise](my_solutions/canvas/the_canvas_element/snowman.html)
     - 14 Making Things Move on the Canvas
     - 15 Controlling Animations with the Keyboard
     - 16 Making a Snake Game: Part 1
