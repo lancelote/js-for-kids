@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Painting with Mouse</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    let canvas = document.getElementById("canvas");
+    let ctx = canvas.getContext("2d");
+
+    $("canvas").mousemove(function (event) {
+        ctx.beginPath();
+        ctx.arc(event.offsetX, event.offsetY, 3, 0, Math.PI * 2, false);
+        ctx.fill();
+    });
+</script>
+</body>
+</html>

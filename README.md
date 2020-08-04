@@ -57,6 +57,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Snowman Exercise](my_solutions/canvas/the_canvas_element/snowman.html)
         - [Snowman Drawing Function](my_solutions/canvas/the_canvas_element/snowman_function.html)
         - [Draw by Points](my_solutions/canvas/the_canvas_element/draw_by_points.html)
+        - [Painting with Mouse](my_solutions/canvas/the_canvas_element/paint_with_mouse.html)
     - 14 Making Things Move on the Canvas
     - 15 Controlling Animations with the Keyboard
     - 16 Making a Snake Game: Part 1
