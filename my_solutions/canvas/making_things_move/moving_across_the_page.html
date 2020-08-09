@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moving Across the Page</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let position = 0;
+
+    setInterval(function () {
+        ctx.clearRect(0, 0, 200, 200);
+        ctx.fillRect(position, 0, 20, 20)
+
+        position++;
+
+        if (position > 200) {
+            position = 0;
+        }
+    }, 30);
+</script>
+</body>
+</html>

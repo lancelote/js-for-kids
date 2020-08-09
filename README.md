@@ -60,6 +60,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Painting with Mouse](my_solutions/canvas/the_canvas_element/paint_with_mouse.html)
         - [Hangman Game with Drawing](my_solutions/canvas/the_canvas_element/hangman_drawing_game.html)
     - 14 Making Things Move on the Canvas
+        - [Moving Across the Page](my_solutions/canvas/making_things_move/moving_across_the_page.html)
     - 15 Controlling Animations with the Keyboard
     - 16 Making a Snake Game: Part 1
     - 17 Making a Snake Game: Part 2
