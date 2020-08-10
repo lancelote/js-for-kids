@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Animating the Size of a Square</title>
+</head>
+<body>
+<canvas id="canvas" width="200" height="200"></canvas>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let size = 0;
+
+    setInterval(function () {
+        ctx.clearRect(0, 0, 200, 200);
+        ctx.fillRect(0, 0, size, size);
+
+        size++;
+
+        if (size > 200) {
+            size = 0;
+        }
+    }, 30);
+</script>
+</body>
+</html>
