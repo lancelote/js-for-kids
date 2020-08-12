@@ -62,6 +62,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
     - 14 Making Things Move on the Canvas
         - [Moving Across the Page](my_solutions/canvas/making_things_move/moving_across_the_page.html)
         - [Animating the Size of a Square](my_solutions/canvas/making_things_move/animating_size.html)
+        - [Random Bee](my_solutions/canvas/making_things_move/random_bee.html)
     - 15 Controlling Animations with the Keyboard
     - 16 Making a Snake Game: Part 1
     - 17 Making a Snake Game: Part 2
