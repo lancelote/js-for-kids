@@ -49,15 +49,19 @@
         }
     };
 
-    let ball = new Ball();
+    let balls = [];
+
+    for (let i = 0; i < 10; i++) {
+        balls.push(new Ball());
+    }
 
     setInterval(function () {
         ctx.clearRect(0, 0, width, height);
-
-        ball.draw();
-        ball.move();
-        ball.checkCollision();
-
+        for (let ball of balls) {
+            ball.draw();
+            ball.move();
+            ball.checkCollision();
+        }
         ctx.strokeRect(0, 0, width, height);
     });
 </script>
