@@ -12,13 +12,15 @@
     const ctx = canvas.getContext("2d");
     const width = canvas.width;
     const height = canvas.height;
+    const colors = ["Red", "Orange", "Yellow", "Green", "Blue", "Purple"];
 
-    const Ball = function() {
-        this.x = 100;
-        this.y = 100;
-        this.xSpeed = Math.floor(Math.random() * 10 - 5);
-        this.ySpeed = Math.floor(Math.random() * 10 - 5);
-    };
+    const randomInt = function(start, stop) {
+        return Math.floor(Math.random() * (stop - start) + start);
+    }
+
+    const randomChoice = function (iterable) {
+        return iterable[randomInt(0, iterable.length)];
+    }
 
     const drawCircle = function(x, y, radius, fillCircle) {
         ctx.beginPath();
@@ -31,7 +33,16 @@
         }
     };
 
+    const Ball = function() {
+        this.x = 100;
+        this.y = 100;
+        this.xSpeed = randomInt(-5, 5);
+        this.ySpeed = randomInt(-5, 5);
+        this.color = randomChoice(colors);
+    };
+
     Ball.prototype.draw = function () {
+        ctx.fillStyle = this.color;
         drawCircle(this.x, this.y, 3, true);
     };
 
@@ -50,7 +61,6 @@
     };
 
     let balls = [];
-
     for (let i = 0; i < 10; i++) {
         balls.push(new Ball());
     }
