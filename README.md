@@ -65,6 +65,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Random Bee](my_solutions/canvas/making_things_move/random_bee.html)
         - [Bouncing Ball](my_solutions/canvas/making_things_move/bouncing_ball.html)
     - 15 Controlling Animations with the Keyboard
+        - [Keyboard Events](my_solutions/canvas/controlling_animations_with_keyboard/keyboard_events.html)
     - 16 Making a Snake Game: Part 1
     - 17 Making a Snake Game: Part 2
 
