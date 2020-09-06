@@ -28,7 +28,8 @@
     const Ball = function() {
         this.x = width / 2;
         this.y = height / 2;
-        this.xSpeed = 5;
+        this.speed = 5;
+        this.xSpeed = this.speed;
         this.ySpeed = 0;
     }
 
@@ -50,15 +51,15 @@
     Ball.prototype.setDirection = function (direction) {
         if (direction === "up") {
             this.xSpeed = 0;
-            this.ySpeed = -5;
+            this.ySpeed = -this.speed;
         } else if (direction === "down") {
             this.xSpeed = 0;
-            this.ySpeed = 5;
+            this.ySpeed = this.speed;
         } else if (direction === "left") {
-            this.xSpeed = -5;
+            this.xSpeed = -this.speed;
             this.ySpeed = 0;
         } else if (direction === "right") {
-            this.xSpeed = 5;
+            this.xSpeed = this.speed;
             this.ySpeed = 0;
         } else if (direction === "stop") {
             this.xSpeed = 0;
