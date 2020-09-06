@@ -29,14 +29,15 @@
         this.x = width / 2;
         this.y = height / 2;
         this.speed = 5;
-        this.xSpeed = this.speed;
+        this.xSpeed = 1;
         this.ySpeed = 0;
     }
 
     Ball.prototype.move = function() {
-        this.x += this.xSpeed;
-        this.y += this.ySpeed;
+        this.x += this.xSpeed * this.speed;
+        this.y += this.ySpeed * this.speed;
 
+        // Bump from the wall
         if (this.x < 0 || this.x > width) {
             this.xSpeed *= -1;
         } else if (this.y < 0 || this.y > height) {
@@ -51,19 +52,25 @@
     Ball.prototype.setDirection = function (direction) {
         if (direction === "up") {
             this.xSpeed = 0;
-            this.ySpeed = -this.speed;
+            this.ySpeed = -1;
         } else if (direction === "down") {
             this.xSpeed = 0;
-            this.ySpeed = this.speed;
+            this.ySpeed = 1;
         } else if (direction === "left") {
-            this.xSpeed = -this.speed;
+            this.xSpeed = -1;
             this.ySpeed = 0;
         } else if (direction === "right") {
-            this.xSpeed = this.speed;
+            this.xSpeed = 1;
             this.ySpeed = 0;
         } else if (direction === "stop") {
             this.xSpeed = 0;
             this.ySpeed = 0;
+        }
+    };
+
+    Ball.prototype.setSpeed = function(newSpeed) {
+        if (newSpeed !== undefined) {
+            this.speed = newSpeed;
         }
     };
 
@@ -77,9 +84,25 @@
         40: "down",
     };
 
+    const speeds = {
+        48: 0,
+        49: 1,
+        50: 2,
+        51: 3,
+        52: 4,
+        53: 5,
+        54: 6,
+        55: 7,
+        56: 8,
+        57: 9,
+    };
+
     $("body").keydown(function (event) {
         let direction = keyActions[event.keyCode];
+        let speed = speeds[event.keyCode];
+
         ball.setDirection(direction);
+        ball.setSpeed(speed);
     });
 
     setInterval(function () {
