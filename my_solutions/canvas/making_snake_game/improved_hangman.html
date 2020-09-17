@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawing the Man in Hangman</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.lineWidth = 4;
+
+    const words = [
+        "javascript",
+        // "monkey",
+        // "amazing",
+        // "pancake"
+    ];
+
+    function drawHangman(remainingGuesses) {
+        if (remainingGuesses === 5) {
+            // head
+            ctx.strokeRect(20, 20, 20, 20);
+        } else {
+            ctx.beginPath();
+
+            if (remainingGuesses === 4) {
+                // body
+                ctx.moveTo(30, 40);
+                ctx.lineTo(30, 80);
+            } else if (remainingGuesses === 3) {
+                // left hand
+                ctx.moveTo(30, 60);
+                ctx.lineTo(10, 50);
+            } else if (remainingGuesses === 2) {
+                // right hand
+                ctx.moveTo(30, 60);
+                ctx.lineTo(50, 50);
+            } else if (remainingGuesses === 1) {
+                // left leg
+                ctx.moveTo(30, 80);
+                ctx.lineTo(10, 100);
+            } else if (remainingGuesses === 0) {
+                // right leg
+                ctx.moveTo(30, 80);
+                ctx.lineTo(50, 100);
+            }
+        }
+
+        ctx.stroke();
+    }
+
+    /**
+     * Pick random item from a given array
+     **/
+    function randomChoice(array) {
+        return array[Math.floor(Math.random() * array.length)];
+    }
+
+    /**
+     * Create an array filled with "_"
+     */
+    function createAnswerArray(length) {
+        let answerArray = [];
+        for (let i = 0; i < length; i++) {
+            answerArray[i] = "_";
+        }
+        return answerArray;
+    }
+
+    function clearAnswer() {
+        ctx.clearRect(10, 120, 410, 140);
+    }
+
+    function drawAnswer(answerArray) {
+        clearAnswer();
+
+        ctx.font = "20px Courier";
+        ctx.fillStyle = "Black";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillText(answerArray.join(" "), 10, 120);
+    }
+
+    /**
+     * Play hangman game
+     */
+    function play() {
+        const word = randomChoice(words);
+        let answerArray = createAnswerArray(word.length);
+        let remainingLetters = answerArray.length;
+        let remainingGuesses = 6;
+
+
+
+        while (remainingLetters > 0 && remainingGuesses !== 0) {
+            drawAnswer(answerArray);
+
+            let guess = prompt("Guess a letter, or click Cancel to stop playing.").toLowerCase();
+            if (guess === null) {
+                break;
+            } else if (guess.length !== 1) {
+                alert("Please enter a single letter.");
+            } else {
+                let correctGuess = false;
+
+                for (let j = 0; j < word.length; j++) {
+                    if (word[j] === guess && answerArray[j] !== guess) {
+                        answerArray[j] = guess;
+                        remainingLetters--;
+                        correctGuess = true;
+                    }
+                }
+
+                if (!correctGuess) {
+                    remainingGuesses -= 1;
+                    drawHangman(remainingGuesses);
+                }
+            }
+        }
+
+        if (remainingLetters > 0) {
+            alert("You lost! The answer was " + word);
+        } else {
+            alert("Good job! The answer was " + word);
+        }
+    }
+
+    play();
+</script>
+</body>
+</html>
