@@ -68,6 +68,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Keyboard Events](my_solutions/canvas/controlling_animations_with_keyboard/keyboard_events.html)
         - [Control the Ball](my_solutions/canvas/controlling_animations_with_keyboard/control_the_ball.html)
     - 16 Making a Snake Game: Part 1
+        - [Snake Game Draft](my_solutions/canvas/making_snake_game/snake_game_draft.html)
     - 17 Making a Snake Game: Part 2
 
 [1]: https://nostarch.com/javascriptforkids

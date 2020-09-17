@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Snake Game Draft</title>
+</head>
+<body>
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+    let score = 0;
+
+    const WIDTH = canvas.width;
+    const HEIGHT = canvas.height;
+    const BLOCK_SIZE = 10;
+    const widthInBlocks = WIDTH / BLOCK_SIZE;
+    const heightInBlocks = HEIGHT / BLOCK_SIZE;
+
+    const drawBorder = function () {
+        ctx.fillStyle = "Gray";
+        ctx.fillRect(0, 0, WIDTH, BLOCK_SIZE);                    // top
+        ctx.fillRect(0, HEIGHT - BLOCK_SIZE, WIDTH, BLOCK_SIZE);  // bottom
+        ctx.fillRect(0, 0, BLOCK_SIZE, HEIGHT);                   // left
+        ctx.fillRect(WIDTH - BLOCK_SIZE, 0, BLOCK_SIZE, HEIGHT);  // right
+    };
+
+    const drawScore = function () {
+        ctx.font = "20px Courier";
+        ctx.fillStyle = "Black";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillText("Score: " + score, BLOCK_SIZE, BLOCK_SIZE);
+    };
+
+    const intervalId = setInterval(function () {
+        ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+        drawScore();
+        // snake.move();
+        // snake.draw();
+        // apple.draw();
+        drawBorder();
+    }, 100);
+
+    const gameOver = function () {
+        clearInterval(intervalId);
+        ctx.font = "60px Courier";
+        ctx.fillStyle = "Black";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText("Game Over", WIDTH / 2, HEIGHT / 2);
+    }
+</script>
+</body>
+</html>
