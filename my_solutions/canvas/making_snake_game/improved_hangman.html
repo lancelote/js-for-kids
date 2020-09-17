@@ -122,6 +122,9 @@
             }
         }
 
+        // update displayed answer last one time before showing the result
+        drawAnswer(answerArray);
+
         if (remainingLetters > 0) {
             alert("You lost! The answer was " + word);
         } else {
