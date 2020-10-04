@@ -11,6 +11,9 @@
     const canvas = document.getElementById("canvas");
     const ctx = canvas.getContext("2d");
 
+    const WIDTH = canvas.width;
+    const HEIGHT = canvas.height;
+
     ctx.lineWidth = 4;
 
     const words = [
@@ -21,33 +24,41 @@
     ];
 
     function drawHangman(remainingGuesses) {
-        if (remainingGuesses === 5) {
-            // head
+        // head
+        if (remainingGuesses <= 5) {
             ctx.strokeRect(20, 20, 20, 20);
-        } else {
-            ctx.beginPath();
+        }
 
-            if (remainingGuesses === 4) {
-                // body
-                ctx.moveTo(30, 40);
-                ctx.lineTo(30, 80);
-            } else if (remainingGuesses === 3) {
-                // left hand
-                ctx.moveTo(30, 60);
-                ctx.lineTo(10, 50);
-            } else if (remainingGuesses === 2) {
-                // right hand
-                ctx.moveTo(30, 60);
-                ctx.lineTo(50, 50);
-            } else if (remainingGuesses === 1) {
-                // left leg
-                ctx.moveTo(30, 80);
-                ctx.lineTo(10, 100);
-            } else if (remainingGuesses === 0) {
-                // right leg
-                ctx.moveTo(30, 80);
-                ctx.lineTo(50, 100);
-            }
+        ctx.beginPath();
+
+        // body
+        if (remainingGuesses <= 4) {
+            ctx.moveTo(30, 40);
+            ctx.lineTo(30, 80);
+        }
+
+        // left hand
+        if (remainingGuesses <= 3) {
+            ctx.moveTo(30, 60);
+            ctx.lineTo(10, 50);
+        }
+
+        // right hand
+        if (remainingGuesses <= 2) {
+            ctx.moveTo(30, 60);
+            ctx.lineTo(50, 50);
+        }
+
+        // left leg
+        if (remainingGuesses <= 1) {
+            ctx.moveTo(30, 80);
+            ctx.lineTo(10, 100);
+        }
+
+        // right leg
+        if (remainingGuesses <= 0) {
+            ctx.moveTo(30, 80);
+            ctx.lineTo(50, 100);
         }
 
         ctx.stroke();
@@ -71,13 +82,11 @@
         return answerArray;
     }
 
-    function clearAnswer() {
-        ctx.clearRect(10, 120, 410, 140);
+    function clearCanvas() {
+        ctx.clearRect(0, 0, WIDTH, HEIGHT);
     }
 
     function drawAnswer(answerArray) {
-        clearAnswer();
-
         ctx.font = "20px Courier";
         ctx.fillStyle = "Black";
         ctx.textAlign = "left";
@@ -115,11 +124,15 @@
                     }
                 }
 
+                // wrong answer
                 if (!correctGuess) {
                     remainingGuesses -= 1;
                     drawHangman(remainingGuesses);
                 }
             }
+
+            clearCanvas();
+            drawHangman(remainingGuesses);
         }
 
         // update displayed answer last one time before showing the result
