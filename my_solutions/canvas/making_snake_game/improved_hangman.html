@@ -94,6 +94,16 @@
         ctx.fillText(answerArray.join(" "), 10, 120);
     }
 
+    function drawWrongGuess(i, char) {
+
+    }
+
+    function drawWrongGuesses(wrongGuesses) {
+        for (let [i, char] of wrongGuesses.entries()) {
+            drawWrongGuess(i, char);
+        }
+    }
+
     /**
      * Play hangman game
      */
@@ -102,12 +112,11 @@
         let answerArray = createAnswerArray(word.length);
         let remainingLetters = answerArray.length;
         let remainingGuesses = 6;
+        let wrongGuesses = [];
 
-
+        drawAnswer(answerArray);
 
         while (remainingLetters > 0 && remainingGuesses !== 0) {
-            drawAnswer(answerArray);
-
             let guess = prompt("Guess a letter, or click Cancel to stop playing.").toLowerCase();
             if (guess === null) {
                 break;
@@ -127,16 +136,15 @@
                 // wrong answer
                 if (!correctGuess) {
                     remainingGuesses -= 1;
-                    drawHangman(remainingGuesses);
+                    wrongGuesses.push(guess);
                 }
             }
 
             clearCanvas();
             drawHangman(remainingGuesses);
+            drawWrongGuesses(wrongGuesses);
+            drawAnswer(answerArray);
         }
-
-        // update displayed answer last one time before showing the result
-        drawAnswer(answerArray);
 
         if (remainingLetters > 0) {
             alert("You lost! The answer was " + word);
