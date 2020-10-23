@@ -14,8 +14,6 @@
     const WIDTH = canvas.width;
     const HEIGHT = canvas.height;
 
-    ctx.lineWidth = 4;
-
     const words = [
         "javascript",
         // "monkey",
@@ -24,6 +22,8 @@
     ];
 
     function drawHangman(remainingGuesses) {
+        ctx.lineWidth = 4;
+
         // head
         if (remainingGuesses <= 5) {
             ctx.strokeRect(20, 20, 20, 20);
@@ -87,6 +87,7 @@
     }
 
     function drawAnswer(answerArray) {
+        ctx.lineWidth = 4;
         ctx.font = "20px Courier";
         ctx.fillStyle = "Black";
         ctx.textAlign = "left";
@@ -95,7 +96,17 @@
     }
 
     function drawWrongGuess(i, char) {
+        ctx.font = "20px Courier";
+        ctx.fillStyle = "Black";
+        ctx.textAlign = "left";
+        ctx.textBaseline = "top";
+        ctx.fillText(char, 300, 20 * i);
 
+        ctx.beginPath();
+        ctx.lineWidth = 2;
+        ctx.moveTo(300, 10 + 20 * i);
+        ctx.lineTo(312, 10 + 20 * i);
+        ctx.stroke();
     }
 
     function drawWrongGuesses(wrongGuesses) {
