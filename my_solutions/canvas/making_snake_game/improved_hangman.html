@@ -73,18 +73,30 @@
     }
 
     /**
-     * Create an array filled with "_"
+     * Create an array filled with spaces
      */
     function createAnswerArray(length) {
         let answerArray = [];
         for (let i = 0; i < length; i++) {
-            answerArray[i] = "_";
+            answerArray[i] = " ";
         }
         return answerArray;
     }
 
     function clearCanvas() {
         ctx.clearRect(0, 0, WIDTH, HEIGHT);
+    }
+
+    function drawAnswerUnderscores(answerArray) {
+        ctx.lineWidth = 4;
+
+        for (let i = 0; i < answerArray.length; i++) {
+            ctx.beginPath();
+            ctx.lineWidth = 2;
+            ctx.moveTo(10 + 24 * i, 140);
+            ctx.lineTo(22 + 24 * i, 140);
+            ctx.stroke();
+        }
     }
 
     function drawAnswer(answerArray) {
@@ -94,6 +106,8 @@
         ctx.textAlign = "left";
         ctx.textBaseline = "top";
         ctx.fillText(answerArray.join(" "), 10, 120);
+
+        drawAnswerUnderscores(answerArray);
     }
 
     function drawWrongGuess(i, char) {
