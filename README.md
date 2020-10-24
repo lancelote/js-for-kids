@@ -71,5 +71,6 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Snake Game Draft](my_solutions/canvas/making_snake_game/snake_game_draft.html)
         - [Improved Hangman](my_solutions/canvas/making_snake_game/improved_hangman.html)
     - 17 Making a Snake Game: Part 2
+        - [Snake Game Finish](my_solutions/canvas/making_snake_game_2/snake_game_finish.html)
 
 [1]: https://nostarch.com/javascriptforkids
