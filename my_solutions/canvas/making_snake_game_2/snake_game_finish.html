@@ -12,13 +12,14 @@
 <script>
   const canvas = document.getElementById("canvas");
   const ctx = canvas.getContext("2d");
-  let score = 0;
 
   const WIDTH = canvas.width;
   const HEIGHT = canvas.height;
+
   const BLOCK_SIZE = 10;
   const WIDTH_IN_BLOCKS = WIDTH / BLOCK_SIZE;
   const HEIGHT_IN_BLOCKS = HEIGHT / BLOCK_SIZE;
+
   const DIRECTIONS = {
     37: "left",
     38: "up",
@@ -180,6 +181,19 @@
     ctx.fillText("Score: " + score, BLOCK_SIZE, BLOCK_SIZE);
   };
 
+  const gameOver = () => {
+    clearInterval(intervalId);
+    ctx.font = "60px Courier";
+    ctx.fillStyle = "Black";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("Game Over", WIDTH / 2, HEIGHT / 2);
+  };
+
+  let score = 0;
+  const snake = new Snake();
+  const apple = new Apple();
+
   const intervalId = setInterval(() => {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
@@ -189,15 +203,6 @@
     apple.draw();
     drawBorder();
   }, 100);
-
-  const gameOver = () => {
-    clearInterval(intervalId);
-    ctx.font = "60px Courier";
-    ctx.fillStyle = "Black";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText("Game Over", WIDTH / 2, HEIGHT / 2);
-  };
 
   $("body").keydown(event => {
     let newDirection = DIRECTIONS[event.keyCode];
