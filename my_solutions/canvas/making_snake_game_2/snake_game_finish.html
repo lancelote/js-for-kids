@@ -59,6 +59,22 @@
         this.nextDirection = "right";
     };
 
+    Snake.prototype.setDirection = function (newDirection) {
+        // illegal moves
+        if (this.direction === "up" && newDirection === "down") {
+            return;
+        } else if (this.direction === "right" && newDirection === "left") {
+            return;
+        } else if (this.direction === "down" && newDirection === "up") {
+            return;
+        } else if (this.direction === "left" && newDirection === "right") {
+            return;
+        }
+
+        // legal move
+        this.nextDirection = newDirection;
+    };
+
     Snake.prototype.checkCollision = function (head) {
         const leftCollision = (head.col === 0);
         const topCollision = (head.row === 0);
