@@ -137,6 +137,12 @@
     }
   }
 
+  class Apple {
+    constructor() {
+      this.position = new Block(10, 10);
+    }
+  }
+
   const drawCircle = (x, y, radius, fillCircle) => {
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, Math.PI * 2, false);
