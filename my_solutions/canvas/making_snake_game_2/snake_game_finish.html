@@ -19,6 +19,12 @@
     const BLOCK_SIZE = 10;
     const WIDTH_IN_BLOCKS = WIDTH / BLOCK_SIZE;
     const HEIGHT_IN_BLOCKS = HEIGHT / BLOCK_SIZE;
+    const DIRECTIONS = {
+        37: "left",
+        38: "up",
+        39: "right",
+        40: "down",
+    };
 
     const Block = function (col, row) {
         this.col = col;
@@ -156,6 +162,13 @@
         ctx.textBaseline = "middle";
         ctx.fillText("Game Over", WIDTH / 2, HEIGHT / 2);
     };
+
+    $("body").keydown(function (event) {
+        let newDirection = DIRECTIONS[event.keyCode];
+        if (newDirection !== undefined) {
+            snake.setDirection(newDirection);
+        }
+    });
 </script>
 </body>
 </html>
