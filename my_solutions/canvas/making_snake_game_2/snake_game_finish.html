@@ -20,6 +20,9 @@
   const WIDTH_IN_BLOCKS = WIDTH / BLOCK_SIZE;
   const HEIGHT_IN_BLOCKS = HEIGHT / BLOCK_SIZE;
 
+  const HEAD_COLOR = "Green";
+  const BODY_COLORS = ["Blue", "Yellow"];
+
   const DIRECTIONS = {
     37: "left",
     38: "up",
@@ -132,8 +135,13 @@
     }
 
     draw() {
-      for (const block of this.segments) {
-        block.drawSquare("Blue");
+      for (let i = 0; i < this.segments.length; i++) {
+        if (i === 0) {  // head
+          this.segments[i].drawSquare(HEAD_COLOR);
+        } else {  // body
+          let segmentColor = BODY_COLORS[i % BODY_COLORS.length];
+          this.segments[i].drawSquare(segmentColor);
+        }
       }
     }
   }
