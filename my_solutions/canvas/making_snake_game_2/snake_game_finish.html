@@ -145,6 +145,12 @@
     draw() {
       this.position.drawCircle("LimeGreen");
     }
+
+    move() {
+      const randomCol = Math.floor(Math.random() * (WIDTH_IN_BLOCKS - 2)) + 1;
+      const randomRow = Math.floor(Math.random() * (HEIGHT_IN_BLOCKS - 2)) + 1;
+      this.position = new Block(randomCol, randomRow);
+    }
   }
 
   const drawCircle = (x, y, radius, fillCircle) => {
