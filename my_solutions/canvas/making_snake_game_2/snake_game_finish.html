@@ -23,25 +23,25 @@
     const Block = function (col, row) {
         this.col = col;
         this.row = row;
-    }
+    };
 
     Block.prototype.drawSquare = function (color) {
         let x = this.col * BLOCK_SIZE;
         let y = this.row * BLOCK_SIZE;
         ctx.fillStyle = color;
         ctx.fillRect(x, y, BLOCK_SIZE, BLOCK_SIZE);
-    }
+    };
 
     Block.prototype.drawCircle = function (color) {
         let centerX = this.col * BLOCK_SIZE + BLOCK_SIZE / 2;
         let centerY = this.row * BLOCK_SIZE + BLOCK_SIZE / 2;
         ctx.fillStyle = color;
         drawCircle(centerX, centerY, BLOCK_SIZE / 2, true);
-    }
+    };
 
     Block.prototype.equal = function (otherBlock) {
         return this.col === otherBlock.col && this.row === otherBlock.row;
-    }
+    };
 
     const Snake = function () {
         this.segments = [
@@ -50,14 +50,45 @@
             new Block(5, 5),
         ];
         this.direction = "right";
-        this.nextDirection = "right";  // ToDo: get rid of nextDirection?
-    }
+        this.nextDirection = "right";
+    };
+
+    Snake.prototype.move = function () {
+        let head = this.segments[0];
+        let newHead;
+
+        this.direction = this.nextDirection;
+
+        if (this.direction === "right") {
+            newHead = new Block(head.col + 1, head.row)
+        } else if (this.direction === "down") {
+            newHead = new Block(head.col, head.row + 1);
+        } else if (this.direction === "left") {
+            newHead = new Block(head.col - 1, head.row);
+        } else if (this.direction === "up") {
+            newHead = new Block(head.col, head.row - 1);
+        }
+
+        if (this.checkCollision(newHead)) {
+            gameOver();
+            return;
+        }
+
+        this.segments.unshift(newHead);
+
+        if (newHead.equal(apple.position)) {
+            score++;
+            apple.move();
+        } else {
+            this.segments.pop();
+        }
+    };
 
     Snake.prototype.draw = function () {
         for (const block of this.segments) {
             block.drawSquare("Blue");
         }
-    }
+    };
 
     const drawCircle = function(x, y, radius, fillCircle) {
         ctx.beginPath();
@@ -103,7 +134,7 @@
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText("Game Over", WIDTH / 2, HEIGHT / 2);
-    }
+    };
 </script>
 </body>
 </html>
