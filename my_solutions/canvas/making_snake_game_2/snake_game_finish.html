@@ -17,8 +17,8 @@
     const WIDTH = canvas.width;
     const HEIGHT = canvas.height;
     const BLOCK_SIZE = 10;
-    const widthInBlocks = WIDTH / BLOCK_SIZE;
-    const heightInBlocks = HEIGHT / BLOCK_SIZE;
+    const WIDTH_IN_BLOCKS = WIDTH / BLOCK_SIZE;
+    const HEIGHT_IN_BLOCKS = HEIGHT / BLOCK_SIZE;
 
     const Block = function (col, row) {
         this.col = col;
@@ -51,6 +51,27 @@
         ];
         this.direction = "right";
         this.nextDirection = "right";
+    };
+
+    Snake.prototype.checkCollision = function (head) {
+        const leftCollision = (head.col === 0);
+        const topCollision = (head.row === 0);
+        const rightCollision = (head.col === WIDTH_IN_BLOCKS - 1);
+        const bottomCollision = (head.col === HEIGHT_IN_BLOCKS - 1);
+
+        const wallCollision = (
+            leftCollision || topCollision || rightCollision || bottomCollision
+        );
+
+        let selfCollision = false;
+
+        for (const segment of this.segments) {
+            if (head.equal(segment)) {
+                selfCollision = true;
+            }
+        }
+
+        return wallCollision || selfCollision;
     };
 
     Snake.prototype.move = function () {
