@@ -141,6 +141,10 @@
     constructor() {
       this.position = new Block(10, 10);
     }
+
+    draw() {
+      this.position.drawCircle("LimeGreen");
+    }
   }
 
   const drawCircle = (x, y, radius, fillCircle) => {
