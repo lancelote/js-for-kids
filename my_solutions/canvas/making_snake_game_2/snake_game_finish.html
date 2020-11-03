@@ -128,6 +128,7 @@
 
       if (newHead.equal(apple.position)) {
         score++;
+        animationSpeed -= 5;
         apple.move();
       } else {
         this.segments.pop();
@@ -190,7 +191,7 @@
   };
 
   const gameOver = () => {
-    clearInterval(intervalId);
+    playing = false;
     ctx.font = "60px Courier";
     ctx.fillStyle = "Black";
     ctx.textAlign = "center";
@@ -199,10 +200,13 @@
   };
 
   let score = 0;
+  let playing = true;
+  let animationSpeed = 100;
+
   const snake = new Snake();
   const apple = new Apple();
 
-  const intervalId = setInterval(() => {
+  const gameLoop = () => {
     ctx.clearRect(0, 0, WIDTH, HEIGHT);
 
     drawScore();
@@ -210,7 +214,11 @@
     snake.draw();
     apple.draw();
     drawBorder();
-  }, 100);
+
+    if (playing) {
+      setTimeout(gameLoop, animationSpeed);
+    }
+  };
 
   $("body").keydown(event => {
     let newDirection = DIRECTIONS[event.keyCode];
@@ -218,6 +226,8 @@
       snake.setDirection(newDirection);
     }
   });
+
+  gameLoop();
 </script>
 </body>
 </html>
