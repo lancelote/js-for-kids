@@ -157,9 +157,19 @@
     }
 
     move() {
-      const randomCol = Math.floor(Math.random() * (WIDTH_IN_BLOCKS - 2)) + 1;
-      const randomRow = Math.floor(Math.random() * (HEIGHT_IN_BLOCKS - 2)) + 1;
-      this.position = new Block(randomCol, randomRow);
+      do {
+        const newCol = Math.floor(Math.random() * (WIDTH_IN_BLOCKS - 2)) + 1;
+        const newRow = Math.floor(Math.random() * (HEIGHT_IN_BLOCKS - 2)) + 1;
+        this.position = new Block(newCol, newRow);
+      } while (this.isCollisionWithSnake());
+    }
+
+    isCollisionWithSnake() {
+      for (const segment of snake.segments) {
+        if (this.position.equal(segment)) {
+          return true;
+        }
+      }
     }
   }
 
