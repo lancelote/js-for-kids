@@ -42,7 +42,7 @@ My solutions for [JavaScript for Kids][1] book by Nick Morgan
         - [Car Constructor](my_solutions/advanced_javascript/object_oriented_programming/car.html)
         - [Car Prototype](my_solutions/advanced_javascript/object_oriented_programming/car_prototype.html)
         - [Car Race](my_solutions/advanced_javascript/object_oriented_programming/car_race.html)
-- [ ] III. [Canvas](my_solutions/canvas)
+- [x] III. [Canvas](my_solutions/canvas)
     - 13 [The Canvas Element](my_solutions/canvas/the_canvas_element)
         - [Basic Canvas](my_solutions/canvas/the_canvas_element/basic_canvas.html)
         - [Canvas Man](my_solutions/canvas/the_canvas_element/canvas_man.html)
